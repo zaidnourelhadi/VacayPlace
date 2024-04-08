@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Vacation home rental platform Web Application Web Application : <br>
-
 
 
 
