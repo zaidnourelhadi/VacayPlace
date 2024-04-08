@@ -95,7 +95,6 @@ server.port=2330[Optional] <br>
 
 #### Login Page
 
-![logins](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/9c1efb48-5b23-4a43-8c96-81d55a7b1180)
 
 
 
