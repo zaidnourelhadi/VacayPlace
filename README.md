@@ -87,12 +87,9 @@ server.port=2330[Optional] <br>
 
 #### Products 
 
-![products (2)](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/0496f63a-f30c-4108-91a7-966bd37b2b54)
 
 
 #### Location 
-
-![locateus](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/30e40d74-d2f0-48cb-91b3-ea515f12c498)
 
 
 
