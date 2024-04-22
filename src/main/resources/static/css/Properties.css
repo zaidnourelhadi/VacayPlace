@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+
+#buy{
+	color: black;
+	background-color: #0c63e4 ;
+	border: 1px solid green;
+	text-decoration: none;
+	padding: 5px;
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="" th:href="@{/css/Add_Property.css}" />
+</head>
+
+<body>
+	<a href="/services">Back to Services</a>
+	<div class="addProperties">
+		<h3 style="font-weight: bolder;color: seagreen;">ADD NEW PROPERTY :</h3>
+		<form action="" th:action="@{/addingProperty}" method="post">
+			Property_Location :
+			<input type="text" name="plocation" value="" placeholder="Enter Property Location....." /> <br />
+			Property_Price :
+			<input type="text" name="pprice" placeholder="Enter Property Price...." /><br />
+			Property_Desc : <br />
+			<textarea name="pdescription" id="" cols="15" rows="1"
+				placeholder="Enter Property Description.."></textarea><br />
+
+			<button type="submit">Add_Property</button>
+
+		</form>
+	</div>
+</body>
+
+</html>

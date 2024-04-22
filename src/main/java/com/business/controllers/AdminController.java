@@ -1,14 +1,11 @@
 package com.business.controllers;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,16 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.business.basiclogics.Logic;
 import com.business.entities.Admin;
 import com.business.entities.Orders;
-import com.business.entities.Product;
+import com.business.entities.Property;
 import com.business.entities.User;
 import com.business.loginCredentials.AdminLogin;
 import com.business.loginCredentials.UserLogin;
 import com.business.services.AdminServices;
 import com.business.services.OrderServices;
-import com.business.services.ProductServices;
+import com.business.services.PropertyServices;
 import com.business.services.UserServices;
-
-import jakarta.validation.Valid;
 
 @Controller
 public class AdminController {
@@ -36,7 +31,7 @@ public class AdminController {
 	@Autowired
 	private AdminServices adminServices;
 	@Autowired
-	private ProductServices productServices;	
+	private PropertyServices propertyServices;
 	@Autowired
 	private OrderServices orderServices;
 
@@ -71,8 +66,8 @@ public class AdminController {
 			user = this.services.getUserByEmail(email);
 			List<Orders> orders = this.orderServices.getOrdersForUser(user);
 			model.addAttribute("orders", orders);
-			model.addAttribute("name", user.getUname());
-			return "BuyProduct";
+			model.addAttribute("location", user.getUname());
+			return "BuyProperty";
 		}
 		else
 		{
@@ -81,24 +76,24 @@ public class AdminController {
 		}
 
 	}
-	//Searching Product By Name
-	@PostMapping("/product/search")
-	public String seachHandler(@RequestParam("productName") String name,Model model)
+	//Searching Property By Location
+	@PostMapping("/property/search")
+	public String seachHandler(@RequestParam("propertyLocation") String location,Model model)
 	{
 
-		Product product=this.productServices.getProductByName(name);
-		if(product==null)
+		Property property =this.propertyServices.getPropertyByLocation(location);
+		if(property ==null)
 		{
-			model.addAttribute("message", "SORRY...!  Product Unavailable");
-			model.addAttribute("product", product);
+			model.addAttribute("message", "SORRY...!  Property Unavailable");
+			model.addAttribute("property", property);
 			List<Orders> orders = this.orderServices.getOrdersForUser(user);
 			model.addAttribute("orders", orders);
-			return "BuyProduct";
+			return "BuyProperty";
 		}
 		List<Orders> orders = this.orderServices.getOrdersForUser(user);
 		model.addAttribute("orders", orders);
-		model.addAttribute("product", product);
-		return "BuyProduct";
+		model.addAttribute("property", property);
+		return "BuyProperty";
 
 	}
 
@@ -108,11 +103,11 @@ public class AdminController {
 	{
 		List<User> users= this.services.getAllUser();
 		List<Admin>admins=this.adminServices.getAll(); 
-		List<Product>products=this.productServices.getAllProducts();
+		List<Property> properties =this.propertyServices.getAllProperties();
 		List<Orders> orders = this.orderServices.getOrders();
 		model.addAttribute("users",users);
 		model.addAttribute("admins", admins);
-		model.addAttribute("products", products);
+		model.addAttribute("properties", properties);
 		model.addAttribute("orders", orders);
 
 		return "Admin_Page";
@@ -160,21 +155,21 @@ public class AdminController {
 		return "redirect:/admin/services";
 	}
 
-	//Invoking AddProduct Page
-	@GetMapping("/addProduct")
-	public String addProduct()
+	//Invoking AddProperty Page
+	@GetMapping("/addProperty")
+	public String addProperty()
 	{
-		return "Add_Product";
+		return "Add_Property";
 	}
 
-	//Invoking Update Product Page
-	@GetMapping("/updateProduct/{productId}")
-	public String updateProduct(@PathVariable("productId") int id,Model model)
+	//Invoking Update Property Page
+	@GetMapping("/updateProperty/{propertyId}")
+	public String updateProperty(@PathVariable("propertyId") int id,Model model)
 	{
-		Product product=this.productServices.getProduct(id);
-		System.out.println(product);
-		model.addAttribute("product", product);
-		return "Update_Product";
+		Property property =this.propertyServices.getProperty(id);
+		System.out.println(property);
+		model.addAttribute("property", property);
+		return "Update_Property";
 	}
 
 	//Invoking AddUser Page
@@ -193,7 +188,7 @@ public class AdminController {
 		return "Update_User";
 	}
 	//Placing  Order
-	@PostMapping("/product/order")
+	@PostMapping("/property/order")
 	public String orderHandler(@ModelAttribute() Orders order,Model model)
 	{
 		double  totalAmount = Logic.countTotal(order.getoPrice(),order.getoQuantity());
@@ -206,12 +201,12 @@ public class AdminController {
 		return "Order_success";
 	}
 
-	@GetMapping("/product/back")
+	@GetMapping("/property/back")
 	public String back(Model model)
 	{
 		List<Orders> orders = this.orderServices.getOrdersForUser(user);
 		model.addAttribute("orders", orders);
-		return "BuyProduct";
+		return "BuyProperty";
 	}
 
 }

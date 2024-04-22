@@ -8,8 +8,7 @@ body
 	color: rgb(192, 192, 192);
 	font-weight: bold;
 }
-
-.addProducts{
+.updateProperty{
 	background-color: transparent;
 	width: 400px;
 	height: 400px;

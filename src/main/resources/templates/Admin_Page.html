@@ -64,27 +64,27 @@
 			</div>
 
 
-			<div class="products">
-				<h2>Products :</h2>
+			<div class="properties">
+				<h2>Properties :</h2>
 				<table>
 					<tr>
-						<th>Product_Id</th>
-						<th>Product_Name</th>
-						<th>Product_Price</th>
+						<th>Property_Id</th>
+						<th>Property_Location</th>
+						<th>Property_Price</th>
 						<th>Actions</th>
 					</tr>
-					<tr th:each="product :${products}">
-						<td th:text="${product.pid}"></td>
-						<td th:text="${product.pname}"></td>
-						<td th:text="${product.pprice}"></td>
-						<td><a style="color: blue;" href="" th:href="@{'/updateProduct/'+${product.pid}}"><i
+					<tr th:each="property :${properties}">
+						<td th:text="${property.pid}"></td>
+						<td th:text="${property.plocation}"></td>
+						<td th:text="${property.pprice}"></td>
+						<td><a style="color: blue;" href="" th:href="@{'/updateProperty/'+${property.pid}}"><i
 									class="fa-solid fa-pen"></i></a><span>&nbsp;</span>
-							<a style="color: red;" href="" th:href="@{'/deleteProduct/'+${product.pid}}"><i
+							<a style="color: red;" href="" th:href="@{'/deleteProperty/'+${property.pid}}"><i
 									class="fa-solid fa-trash"></i></a>
 						</td>
 					</tr>
 				</table>
-				<a href="" class="btns" th:href="@{'/addProduct'}">Add_Product</a>
+				<a href="" class="btns" th:href="@{'/addProperty'}">Add_Property</a>
 			</div>
 			
 			<div class="details">
@@ -93,9 +93,9 @@
 				<tr>
 					<th>User_Name</th>
 					<th>User_Email</th>
-					<th>Product_Name</th>
-					<th>Product_Price</th>
-					<th>Product_Quantity</th>
+					<th>Property_Location</th>
+					<th>Property_Price</th>
+					<th>Property_Quantity</th>
 					<th>Total_Ammount</th>
 					<th>Date</th>
 				</tr>

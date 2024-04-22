@@ -6,14 +6,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Product
+public class Property
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pid;
-	private String pname;
+	private String plocation;
 	private double pprice;
 	private String pdescription;
+	private String pimage;
+
 
 	public int getPid() {
 		return pid;
@@ -21,11 +23,11 @@ public class Product
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	public String getPname() {
-		return pname;
+	public String getPlocation() {
+		return plocation;
 	}
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setPlocation(String plocation) {
+		this.plocation = plocation;
 	}
 	public double getPprice() {
 		return pprice;
@@ -39,9 +41,14 @@ public class Product
 	public void setPdescription(String pdescription) {
 		this.pdescription = pdescription;
 	}
+
+	public String getPimage() { return pimage; }
+
+	public void setPimage(String pimage) { this.pimage = pimage; }
+
 	@Override
 	public String toString() {
-		return "Product [pid=" + pid + ", pname=" + pname + ", pprice=" + pprice + ", pdescription=" + pdescription
+		return "Product [pid=" + pid + ", plocation=" + plocation + ", pprice=" + pprice + ", pdescription=" + pdescription+ ", pimage=" + pimage
 				+ "]";
 	}
 

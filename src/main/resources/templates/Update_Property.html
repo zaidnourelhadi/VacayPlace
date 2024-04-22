@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="" th:href="@{/css/Update_Property.css}" />
+</head>
+
+<body>
+		<a href="/services">Back_To_Services</a>
+	<div class="updateProperty">
+		<h3 style="font-weight: bolder;color: seagreen;">UPDATE EXISTING PROPERTY :</h3>
+		<form action="" th:action="@{'/updatingProperty/'+${property.pid}}" th:object="${property}">
+			Property_Id :
+			<input type="hidden" th:text="${property.pid}" th:value="${property.pid}" /><br />
+			Property_Location :
+			<input type="text" name="plocation" th:value="${property.plocation}" /> <br />
+			Property_Price :
+			<input type="text" name="pprice" th:value="${property.pprice}" /><br />
+			Property_Desc : <br />
+			<textarea name="pdescription" th:value="${property.pdescription}" id="" cols="10" rows="1">
+
+	</textarea><br />
+			<button type="submit">Update_Property</button>
+
+		</form>
+	</div>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Buy Product </title>
+	<title>Buy Property </title>
 	<link rel="stylesheet" href="" />
 </head>
 <style>
@@ -85,19 +85,19 @@
 	<a href="/login">Back</a>
 	<center>
 
-		<form action="" th:action="@{/product/search}" method="post" class="searchInput">
-			<h1>Product Search :</h1>
-			<input type="text" name="productName" required placeholder="Please enter the Product Name....">
+				<form action="" th:action="@{/property/search}" method="post" class="searchInput">
+			<h1>Property Search :</h1>
+			<input type="text" name="propertyLocation" required placeholder="Please enter the Property Location....">
 			<button type="submit">SEARCH</button><br />
 			<smal style="color: red;" th:text="${message}"> </smal>
 		</form>
 		
-		<div th:if="${product!=null}" class="details">
-			<form action="" th:action="@{/product/order}" th:object="${product}" method="post">
-				ProductName :
-				<input type="text" value="" name="oName" th:value="${product.pname}" readonly /><br />
-				Product Price :
-				<input type="text" value="" name="oPrice" th:value="${product.pprice}" readonly /><br />
+		<div th:if="${property!=null}" class="details">
+			<form action="" th:action="@{/property/order}" th:object="${property}" method="post">
+				PropertyLocation :
+				<input type="text" value="" name="oName" th:value="${property.plocation}" readonly /><br />
+				Property Price :
+				<input type="text" value="" name="oPrice" th:value="${property.pprice}" readonly /><br />
 				Quqntity :
 				<input type="number" placeholder="Minimun: 1KG" min="1" name="oQuantity" /><br />
 
@@ -110,9 +110,9 @@
 			<table >
 				<tr>
 	
-					<th>Product_Name</th>
-					<th>Product_Price</th>
-					<th>Product_Quantity</th>
+					<th>Property_Location</th>
+					<th>Property_Price</th>
+					<th>Property_Quantity</th>
 					<th>Total_Ammount</th>
 					<th>Date</th>
 				</tr>
