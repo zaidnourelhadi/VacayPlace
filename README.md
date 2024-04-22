@@ -1,29 +1,11 @@
+
 <<<<<<< HEAD
-# Business Management Web Application : <br>
-
-![home (2)](https://github.com/SuhasKamate/Business_Management_Project/assets/126138738/e8db8f17-72d6-42a0-b264-def0bf883bbf)
-
-
-
-## Project Desc : Vacation home rental platform Web Application 
-  => The Business Management Web Application is a comprehensive tool designed to help businesses manage various aspects of their operations. 
-          It provides a user-friendly interface for tasks like managing customer data, inventory, orders, and more.
-
-
-
-## Features  :
-
-- **Customer Management**: Easily add, update, and delete customer information.
-- **Inventory Management**: Keep track of your inventory items, including stock levels and pricing.
-- **Order Management**: Manage customer orders such as order creation .
-- **User Authentication**: Secure login and authentication for admin and staff members.
-- **Role-Based Access Control**: Define roles and permissions for different user types.
-- **Thymeleaf Templates**: Utilizes Thymeleaf for dynamic HTML templates.
-- **Database Integration**: Integrated with MySQL for data storage.
+# Project Desc : Vacation home rental platform Web Application <br>
 
 
 
 
+<<<<<<< HEAD
 ## Technologies Used :
 
 - Spring Boot: Backend framework for building Java-based web applications.
@@ -119,3 +101,5 @@ server.port=2330[Optional] <br>
 =======
 # VacayPlace
 >>>>>>> d97f338ec9754f0663154b1db9326b5b6da522b0
+=======
+>>>>>>> origin/main
